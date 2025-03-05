@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Любовь к котикам</title>
+  <style>
+    /* Стилизация фона, шрифтов и контейнера */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f8cdda, #1c92d2);
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .cat-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #ff3b2e;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Любовь к котикам</h1>
+    <p>
+      Добро пожаловать на наш сайт, где каждый день наполнен любовью к милым котикам! Здесь вы найдете красивые фотографии, вдохновляющие истории и даже возможность отправить частичку своей любви на другой сервер.
+    </p>
+    <img src="https://placekitten.com/800/400" alt="Красивая кошка" class="cat-image">
+    
+    <!-- Скрытый iframe для отправки POST-запроса -->
+    <iframe name="targetFrame" style="display: none;"></iframe>
+    
+    <!-- Форма для отправки POST-запроса на другой домен -->
+    <form id="postForm" action="https://example.com/endpoint" method="POST" target="targetFrame">
+      <input type="hidden" name="message" value="Я люблю котиков!">
+    </form>
+    
+    <!-- Кнопка для отправки запроса -->
+    <button id="sendButton" class="button">Отправить любовь</button>
+    
+    <div class="footer">
+      &copy; 2025 Любовь к котикам. Все права защищены.
+    </div>
+  </div>
+  
+  <script>
+    // Обработчик события для отправки формы через iframe по клику на кнопку
+    document.getElementById('sendButton').addEventListener('click', function() {
+      document.getElementById('postForm').submit();
+    });
+  </script>
+</body>
+</html>
